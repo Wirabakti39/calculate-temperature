@@ -1,6 +1,7 @@
 import fungsiSuhu
+from fungsiSuhu import else_stat
 while True :	
-	print("   Mini Calculate Temperature ")
+	print("   Mini Calculate Temperature by Dimaz.")
 	print("1. Celcius\n2. Reamur\n3. Fahrenheit\n4. Kelvin")
 	suhu = input("pilih suhu yg akan dikonversikan : ")
 	
@@ -8,7 +9,7 @@ while True :
 		suhu = "celcius"
 		try :
 			angka = float(input(f"masukan angka suhu {suhu} : "))
-			konversi = input("Akan dikonversikan ke suhu... ")
+			konversi = input("Akan di konversikan ke suhu..  ")
 			if konversi == "2" or konversi == "reamur" :
 				konversi = "reamur"
 				hasil = fungsiSuhu.celcius_remaur(angka)
@@ -18,9 +19,9 @@ while True :
 			elif konversi == "4" or konversi == "kelvin" :
 				konversi = "kelvin"
 				hasil = fungsiSuhu.celcius_kelvin(angka)
-			else : print("sorry, this program are not provide your question.")
+			else : else_stat()
 		except ValueError :
-			print("sorry, this program are not provide your question.")
+			else_stat()
 		
 	elif suhu == "2" or suhu == "reamur" :
 		suhu = "reamur"
@@ -36,9 +37,9 @@ while True :
 			elif konversi == "4" or konversi == "kelvin" :
 				konversi = "kelvin"
 				hasil = fungsiSuhu.reamur_kelvin(angka)
-			else : print("sorry, this program are not provide your question.")
-		except NameError :
-			print("sorry, this program are not provide your question.")
+			else : else_stat()
+		except ValueError :
+			else_stat()
 			
 	elif suhu == "3" or suhu == "fahrenheit" :
 		suhu = "fahrenheit"
@@ -54,9 +55,9 @@ while True :
 			elif konversi == "4" or konversi == "kelvin" :
 				konversi = "kelvin"
 				hasil = fungsiSuhu.fahrenheit_kelvin(angka)
-			else : print("sorry, this program are not provide your question.")
-		except NameError :
-			print("sorry, this program are not provide your question.")
+			else : else_stat()
+		except ValueError :
+			else_stat()
 	
 	elif suhu == "4" or suhu == "kelvin" :
 		suhu = "kelvin"
@@ -72,13 +73,13 @@ while True :
 			elif konversi == "3" or konversi == "fahrenheit" :
 				konversi = "fahrenheit"
 				hasil = fungsiSuhu.kelvin_fahrenheit(angka)
-			else : print("sorry, this program are not provide your question.")
-		except NameError :
-			print("sorry, this program are not provide your question.")
+			else : else_stat()
+		except ValueError :
+			else_stat()
 	
 	else :
 		angka, suhu, hasil, konversi = 0, " ", 0, " "
-		print("sorry, this program are not provide your question.")
+		else_stat()
 	
 	try :	
 		print(f"\n	{angka}° {suhu} = {hasil}° {konversi}.\n")
@@ -91,8 +92,9 @@ while True :
 	
 	if lagi == "yes" or lagi == "y" :
 		pass
-	else : 
-		break
+	else :
+	     break
 	
 print("\n	terimakasih\n			©Dims.")
 		
+	
